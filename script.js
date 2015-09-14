@@ -16,12 +16,13 @@ $.ajax({
 
       $('.shows-list').append(showsLis);
 
+
       $('.shows-list .shows-li').on('click', function() {
           var s = $(this),
-            showId = s.attr('data-show-identifier');
+            showId = s.attr('data-show-identifier');            //hover stuff
 
           $('.shows-list .shows-li').removeClass('active');
-          s.addClass('active');
+          s.addClass('active');                                 //hover function stuff
 
           var newUrl = 'https://archive.org/metadata/' + showId;
 
@@ -31,14 +32,14 @@ $.ajax({
               dataType: 'jsonp',
               success: function(showJson) {
 
-                var songLis = "",
+                var songLis = "",           //putting song list metadata into variables
                   baseUrl = showJson.d1,
                   dir = showJson.dir;
 
-                $.each(showJson.files, function(i, val) {
+                $.each(showJson.files, function(i, val) {           //iterate and add name and title to variables
                   var fileName = val.name,
                     songName = val.title,
-                    ext = fileName.substr(fileName.lastIndexOf('.') + 1);
+                    ext = fileName.substr(fileName.lastIndexOf('.') + 1);   //check file type - looks at everything after '.'
 
                   if ((ext === 'ogg' || ext === 'mp3') && songName != undefined) {
                     songLis += '<li class="songs-li" data-song-title="' + songName + '" data-song-src="' + fileName + '">' + songName + '</li>';
@@ -46,18 +47,18 @@ $.ajax({
                 })
 
                 $('.show-songs-list')
-                  .html('') //removes any previous song lists
+                  .html('') //removes any previous song lists and appends songLis to Div
                   .append(songLis);
 
-                $('.show-songs-list .songs-li').on('click', function() {
+                $('.show-songs-list .songs-li').on('click', function() {        //changes the audio source
                   var songJonx = $(this),
                     songSrc = 'http://' + baseUrl + dir + '/' + songJonx.attr('data-song-src'),
                     songTitle = songJonx.attr('data-song-title');
 
-                  $('.show-songs-list li').removeClass('active');
+                  $('.show-songs-list li').removeClass('active');         //ungrey the old li and grey the new one
                   songJonx.addClass('active');
 
-                  $('.player-song-title').html(songTitle);
+                  $('.player-song-title').html(songTitle);          //actual changing of audio source
                   $('.player').attr('src', songSrc);
 
                 })
