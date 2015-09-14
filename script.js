@@ -12,7 +12,7 @@ $.ajax({
           var t = val.title,
             i = val.identifier;
           showsLis += '<li class="shows-li" data-show-title="' + t + '" data-show-identifier="' + i + '">' + t + '</li>';
-        }) //each loop
+        }) //each loop WILL BE NG-REPEAT
 
       $('.shows-list').append(showsLis);
 
