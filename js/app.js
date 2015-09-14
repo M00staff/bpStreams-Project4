@@ -1,8 +1,9 @@
 'use strict';
 
 (function() {
-  var app = angular.module('grumblr', [
+  var app = angular.module('bpStreams', [
     'ngRoute',
-    'ngResource'
+    'ngResource',
+    'bpServices'
   ]);
 })

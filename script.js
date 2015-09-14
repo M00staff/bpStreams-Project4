@@ -47,7 +47,7 @@ $.ajax({
                 })
 
                 $('.show-songs-list')
-                  .html('') //removes any previous song lists and appends songLis to Div
+                  .html('')             //removes any previous song lists and appends songLis to Div
                   .append(songLis);
 
                 $('.show-songs-list .songs-li').on('click', function() {        //changes the audio source
