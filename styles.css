@@ -1,4 +1,4 @@
-.wrapper {
+/*.wrapper {
   padding-bottom: 50px;
 }
 .nav-wrap {
@@ -59,7 +59,7 @@
 }
 .vert-nav li:last-child {
   border-bottom: solid 1px #eeeeee;
-}
+}*/
 footer {
   background: #000;
   position: fixed;
