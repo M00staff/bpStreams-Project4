@@ -52,9 +52,9 @@
 
 <div class="showList" ng-controller="showController">
 
-  <li ng-repeat="show in shows">
+  <li ng-repeat="show in shows" ng-controller="songController" ng-click="go(show.identifier)">
   {{show.title}}
-</li>
+  </li>
 
 </div>
 
