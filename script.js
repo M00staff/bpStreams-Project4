@@ -6,8 +6,8 @@ $.ajax({
   dataType: 'jsonp',
   success: function(data) {
       var shows = data.response.docs,
+        console.log(shows);                       // testing the return object
         showsLis = '';
-
       $.each(shows, function(i, val) {
           var t = val.title,
             i = val.identifier;
@@ -19,12 +19,12 @@ $.ajax({
 
       $('.shows-list .shows-li').on('click', function() {
           var s = $(this),
-            showId = s.attr('data-show-identifier');            //hover stuff
+            showId = s.attr('data-show-identifier');            //half the link for the newUrl
 
           $('.shows-list .shows-li').removeClass('active');
           s.addClass('active');                                 //hover function stuff
 
-          var newUrl = 'https://archive.org/metadata/' + showId;
+          var newUrl = 'https://archive.org/metadata/' + showId;  //making the new Url for song and the next AJAX req
 
           $.ajax({
               type: "GET",

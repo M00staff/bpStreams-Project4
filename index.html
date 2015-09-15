@@ -51,19 +51,15 @@
 </div>
 
 <div class="shows" ng-controller="showController as show">
-  <div ng-repeat="(title, identifier) in showList">
-    {{title}}
-  </br>
-  </br>
-    {{identifier}}
-    </br>
-    </br>
+  {{ showList }}
 
-  </div>
+  <!-- <div ng-repeat="show in showList.response">
+    {{ showList }}
+  </div> -->
 <!-- {{ showList | json }} -->
 </div>
 
-<show-directive></show-directive>
+<!-- <show-directive>{{ showList }}</show-directive> -->
 
 
 </body>
