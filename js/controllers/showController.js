@@ -13,13 +13,13 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
 
     $scope.go = function(showID) {
 
-      console.log('https://archive.org/metadata/' + showID);
+      console.log('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK');
 
-      $http.jsonp('https://archive.org/metadata/' + showID)
-      .then(function(showJson) {
-        //console.log(response);
+      $http.jsonp('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK')
+      .then(function(response) {
+        console.log(response);
       }, function(error) {
-        //console.dir(response);
+        console.dir(response);
         console.log("ERROR");
       })
     }
