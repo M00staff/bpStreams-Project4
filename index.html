@@ -50,16 +50,19 @@
   </footer>
 </div>
 
-<div class="shows" ng-controller="showController as show">
-  {{ showList }}
+<div class="showList" ng-controller="showController">
+
+  <li ng-repeat="show in shows">
+  {{show.title}}
+</li>
+
+</div>
 
   <!-- <div ng-repeat="show in showList.response">
     {{ showList }}
   </div> -->
 <!-- {{ showList | json }} -->
-</div>
-
-<!-- <show-directive>{{ showList }}</show-directive> -->
+<!-- <show-directive>{{ shows }}</show-directive> -->
 
 
 </body>

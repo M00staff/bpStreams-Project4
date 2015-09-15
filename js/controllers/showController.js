@@ -7,9 +7,7 @@ app.controller('showController', ['$http', '$scope', function($http, $scope) {
   .then(function(data) {
 
     //console.dir(data);
-    var shows = data.data.response.docs
-    console.log(shows);
-    // $scope.showList = response;
+    $scope.shows = data.data.response.docs
 
   })
 
