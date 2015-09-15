@@ -50,14 +50,28 @@
   </footer>
 </div>
 
-<div class="showList" ng-controller="showController">
 
-  <li ng-repeat="show in shows" ng-controller="songController" ng-click="go(show.identifier)">
-  {{show.title}}
-  </li>
+
+<div class="showList" ng-controller="showController">
+  <ul>
+    <li ng-repeat="show in shows" ng-controller="songController" ng-click="go(show.identifier)">
+      {{show.title}}
+    </li>
+  </ul>
 
 </div>
-
+      <div class="songDizzle"
+        <ul>
+          <li ng-controller="songController">
+            {{song.songTitle}}
+            <li>asdd
+            asdf
+            asdf
+            asdf
+            asdf</li>
+          </li>
+        </ul>
+      </div>
   <!-- <div ng-repeat="show in showList.response">
     {{ showList }}
   </div> -->

@@ -9,6 +9,9 @@ app.controller('showController', ['$http', '$scope', function($http, $scope) {
     });
 } ]);
 
+
+
+
 app.controller('songController', ['$http', '$scope', function($http, $scope) {
 
     $scope.go = function(showID) {
@@ -17,10 +20,27 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
 
       $http.jsonp('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK')
       .then(function(response) {
-        console.log(response);
-      }, function(error) {
-        console.dir(response);
-        console.log("ERROR");
+
+        // var songs = response.data.files;
+        // console.log(songs);
+
+        $.each(response.data.files, function(i, val) {           //iterate and add name and title to variables
+          var fileName = val.name;
+          var songName = val.title;
+          var songList = {};
+          var ext = fileName.substr(fileName.lastIndexOf('.') + 1);   //check file type - looks at everything after '.'
+
+            if ((ext === 'ogg' || ext === 'mp3') && songName != undefined) {
+              songList["songTitle"] = songName;
+              songList['songFile'] = fileName;
+              //songList.push({songTitle: songName, songFile: fileName})
+              //songList += '<li class="songs-li" data-song-title="' + songName + '" data-song-src="' + fileName + '">' + songName + '</li>';
+              console.log(songList);
+              $scope.songs = songList;
+            }
+
+        })
+
       })
     }
 } ])
