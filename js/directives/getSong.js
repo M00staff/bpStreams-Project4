@@ -17,16 +17,19 @@ app.directive('getSongClick', function() {
 app.directive('getSongD', function() {
   return {
     restrict: 'EA',
-    controller: 'songController',
+    controller: 'getSongCtrl',
     scope: {
-      songs: "@"
+      songSource: "=",
+      //songs: "@"
       //songListFinal: "="
     },
     templateUrl: "views/songsPartial.html",
-    link: function(){
-      console.log("getSongD Directive")
-    },
-    //template: '<h1>{{ songs }}<h1>',
+    // scope.$watch('songs', function(newValue) {
+    //   console.log(newValue);
+    // })
+    link: function(scope) {
+      console.log("directive ran");
+    }
   };
 });
 

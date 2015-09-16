@@ -61,7 +61,6 @@
 
   <div class="row" id="topDiv">
     <get-song-click></get-song-click>
-    <get-song-d></get-song-d>
   </div>
 
   <!-- <div class="row">
@@ -84,7 +83,7 @@
           <li ng-repeat="show in shows" ng-controller="songController">
           <div ng-click="go(show.identifier)">{{show.title}}</div>
           <ul>
-            <li ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCrtl">
+            <li ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
               <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory)">{{ song.songTitle }}</div>
             </li>
           </ul>
@@ -94,6 +93,7 @@
     <!-- </div> -->
   <!-- </div> -->
 
+    <get-song-d></get-song-d>
 
 
   <!-- <div ng-repeat="show in showList.response">
@@ -102,10 +102,10 @@
 <!-- {{ showList | json }} -->
 <!-- <show-directive>{{ shows }}</show-directive> -->
 
-  <footer>
+  <!-- <footer ng-controller="getSongCrtl">
     <span class="player-song-title">Replace With Title</span>
     <audio autoplay controls class="player" src="##replace with url"></audio>
-  </footer>
+  </footer> -->
 
 </div>
 </body>

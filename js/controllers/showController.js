@@ -44,8 +44,13 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
 } ])
 
 
-app.controller('getSongCrtl', ['$http', '$scope', function($http, $scope) {
+app.controller('getSongCtrl', ['$http', '$scope', function($http, $scope) {
   $scope.playSong = function(title, file, d1, dir) {
-  console.log(title, file, d1, dir);
+  //console.log(title, file, d1, dir);
+  var songSrc = {title: title, source: 'http://' + d1 + dir + '/' + file};
+  console.log(songSrc);
+  $scope.songSource = songSrc;
+  $('.player-song-title').html(songSrc.title);          //actual changing of audio source
+  $('.player').attr('src', songSrc.source);
   }
 }])

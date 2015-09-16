@@ -1,13 +1,4 @@
-<div class="songDizzle" ng-controller="showController">
-  <ul>
-      song partial
-    <li ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="songController">
-      {{ song.songTitle }}
-    </li>
-  </ul>
-</div>
-
-    <!-- <li ng-controller="songController">
-      {{songs}}
-      songList
-    </li> -->
+<footer ng-controller="getSongCtrl">
+  <span class="player-song-title">{{ songSource.title }}</span>
+  <audio autoplay controls class="player" ng-src='{{ songSource.source }}'></audio>
+</footer>
