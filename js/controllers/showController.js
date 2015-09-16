@@ -20,27 +20,28 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
 
       $http.jsonp('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK')
       .then(function(response) {
-
+        $scope.songs = response.data.files;
         // var songs = response.data.files;
-        // console.log(songs);
-
-        $.each(response.data.files, function(i, val) {           //iterate and add name and title to variables
-          var fileName = val.name;
-          var songName = val.title;
-          var songList = {};
-          var ext = fileName.substr(fileName.lastIndexOf('.') + 1);   //check file type - looks at everything after '.'
-
-            if ((ext === 'ogg' || ext === 'mp3') && songName != undefined) {
-              songList["songTitle"] = songName;
-              songList['songFile'] = fileName;
-              //songList.push({songTitle: songName, songFile: fileName})
-              //songList += '<li class="songs-li" data-song-title="' + songName + '" data-song-src="' + fileName + '">' + songName + '</li>';
-              console.log(songList);
-              $scope.songs = songList;
-            }
-
-        })
-
+        //console.log(songs);
       })
     }
 } ])
+
+        // $.each(response.data.files, function getSong(i, val, songList) {           //iterate and add name and title to variables
+        //   var fileName = val.name;
+        //   var songName = val.title;
+        //   var songList = {};
+        //   var ext = fileName.substr(fileName.lastIndexOf('.') + 1);   //check file type - looks at everything after '.'
+        //
+        //     if ((ext === 'ogg' || ext === 'mp3') && songName != undefined) {
+        //       songList.songTitle = songName;
+        //       songList.songFile = fileName;
+        //       //songList.push({songTitle: songName, songFile: fileName})
+        //       //songList += '<li class="songs-li" data-song-title="' + songName + '" data-song-src="' + fileName + '">' + songName + '</li>';
+        //       //$scope.songs = songList;
+        //       console.log(songList);
+        //       return songList;
+        //       //$scope.songs = "songList"
+        //     }
+        //
+        // })

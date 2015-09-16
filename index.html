@@ -16,7 +16,7 @@
   <!-- Controller -->
   <script src="js/controllers/showController.js"></script>
   <!-- Directives -->
-  <script src="js/directives/showDirective.js"></script>
+  <!-- // <script src="js/directives/getSong.js"></script> -->
   <!-- Service -->
   <!-- // <script src="js/services/service.js"></script> -->
   <!-- Stylesheets -->
@@ -50,7 +50,24 @@
   </footer>
 </div>
 
+<get-song-d></get-song-d>
 
+      <!-- <div class="songDizzle">
+        <ul>
+          <li ng-controller="songController">
+            {{songs}}
+            songList
+          </li>
+        </ul>
+      </div> -->
+
+      <div class="showList">
+        <ul>
+          <li ng-controller="songController">
+            {{songs}}
+          </li>
+        </ul>
+      </div>
 
 <div class="showList" ng-controller="showController">
   <ul>
@@ -58,20 +75,8 @@
       {{show.title}}
     </li>
   </ul>
-
 </div>
-      <div class="songDizzle"
-        <ul>
-          <li ng-controller="songController">
-            {{song.songTitle}}
-            <li>asdd
-            asdf
-            asdf
-            asdf
-            asdf</li>
-          </li>
-        </ul>
-      </div>
+
   <!-- <div ng-repeat="show in showList.response">
     {{ showList }}
   </div> -->
