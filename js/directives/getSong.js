@@ -16,36 +16,17 @@ app.directive('getSongClick', function() {
 
 app.directive('getSongD', function() {
   return {
-    restrict: 'E',
+    restrict: 'EA',
     controller: 'songController',
     scope: {
       songs: "@"
       //songListFinal: "="
     },
-    link: function(songs){
-      console.log(songs);
-      // $.each(songs, function getSong(i, songs, songList) {           //iterate and add name and title to variables
-      //   var fileName = songs.name;
-      //   var songName = songs.title;
-      //   var songList = {};
-      //   var ext = fileName.substr(fileName.lastIndexOf('.') + 1);   //check file type - looks at everything after '.'
-      //
-      //     if ((ext === 'ogg' || ext === 'mp3') && songName != undefined) {
-      //       songList.songTitle = songName;
-      //       songList.songFile = fileName;
-      //       //songList.push({songTitle: songName, songFile: fileName})
-      //       //songList += '<li class="songs-li" data-song-title="' + songName + '" data-song-src="' + fileName + '">' + songName + '</li>';
-      //       //$scope.songs = songList;
-      //       console.log(songList);
-      //       return songList;
-      //       //$scope.songs = "songList"
-      //     }
-      //
-      // })
-      console.log();
+    templateUrl: "views/songsPartial.html",
+    link: function(){
+      console.log("getSongD Directive")
     },
-    //templateUrl: "/views/songsPartial.html",
-    template: '<h1>{{ songs }}<h1>',
+    //template: '<h1>{{ songs }}<h1>',
   };
 });
 

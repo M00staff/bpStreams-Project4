@@ -64,26 +64,28 @@
 
       <div class="songDizzle" ng-controller="showController">
         <ul>
-          <li ng-controller="songController">
-            <li> {{songs.songTitle}} </li>
+          <li ng-controller="songController" ng-repeat="song in songs">
+            {{show.Title}}
+            <li> {{song.songTitle}} </li>
           </li>
         </ul>
       </div>
 
 <div class="showList" ng-controller="showController">
   <ul>
-    <li ng-repeat="show in shows" ng-controller="songController" ng-click="go(show.identifier)">
+    <li ng-repeat="show in shows" ng-click="go(show.identifier)" ng-controller="songController">
       {{show.title}}
           <ul>
-            <li ng-repeat="song in songs">
+            <li ng-repeat="song in songs | orderBy: 'songFile'">
               {{ song.songTitle }}
+              <get-song-d></get-song-d>
             </li>
-          <ul>
+          </ul>
     </li>
   </ul>
 </div>
 
-</get-song-d>
+
 
   <!-- <div ng-repeat="show in showList.response">
     {{ showList }}

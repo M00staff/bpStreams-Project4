@@ -1,10 +1,11 @@
-<div class="songDizzle">
+<div class="songDizzle" ng-controller="songController">
   <ul>
-    <li>
-    DIRECTIVE
+    <li ng-repeat="song in songs | orderBy: 'songFile'">
+      {{ song.songTitle }}
     </li>
   </ul>
 </div>
+
     <!-- <li ng-controller="songController">
       {{songs}}
       songList
