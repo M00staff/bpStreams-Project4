@@ -40,8 +40,8 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
 } ])
 
 
-// app.controller('songCrtl', ['$http', '$scope', function($http, $scope) {
-//   $scope.songGo = function(file) {
-//   console.log('songCtrl Clicked');
-//   }
-// }])
+app.controller('getSongCrtl', ['$http', '$scope', function($http, $scope) {
+  $scope.playSong = function(file) {
+  console.log(file);
+  }
+}])

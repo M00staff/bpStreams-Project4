@@ -1,10 +1,37 @@
-.songDizzle{
-  float: right;
+.wrapper{
+  border: solid green 1px;
 }
 
+.songDizzle{
+  float: right;
+  background-color: aliceblue;
+  border: solid blue 1px;
+}
+
+.showList{
+  float: left;
+  background-color: aliceblue;
+}
+
+.showsUl{
+  border: solid purple 1px;
+}
+
+.showsLi{
+  border: solid green 1px;
+}
+
+/*.songLi{
+  float: right;
+}*/
+
+#topDiv{
+  border: solid red 1px;
+}
 /*.wrapper {
   padding-bottom: 50px;
 }
+
 .nav-wrap {
   display: -webkit-box;
   display: -webkit-flex;
@@ -64,6 +91,7 @@
 .vert-nav li:last-child {
   border-bottom: solid 1px #eeeeee;
 }*/
+
 footer {
   background: #000;
   position: fixed;
