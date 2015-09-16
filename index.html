@@ -85,7 +85,7 @@
           <div ng-click="go(show.identifier)">{{show.title}}</div>
           <ul>
             <li ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCrtl">
-              <div ng-click="playSong(song.songFile)">{{ song.songTitle }}</div>
+              <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory)">{{ song.songTitle }}</div>
             </li>
           </ul>
         </li>
