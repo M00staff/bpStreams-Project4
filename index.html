@@ -61,6 +61,7 @@
       </div> -->
             <!-- <get-song-d></get-song-d> -->
 <get-song-click></get-song-click>
+<get-song-d></get-song-d>
 
       <div class="songDizzle" ng-controller="showController">
         <ul>
@@ -78,7 +79,6 @@
           <ul>
             <li ng-repeat="song in songs | orderBy: 'songFile'">
               {{ song.songTitle }}
-              <get-song-d></get-song-d>
             </li>
           </ul>
     </li>

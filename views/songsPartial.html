@@ -1,6 +1,7 @@
-<div class="songDizzle" ng-controller="songController">
+<div class="songDizzle" ng-controller="showController">
   <ul>
-    <li ng-repeat="song in songs | orderBy: 'songFile'">
+      song partial
+    <li ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="songController">
       {{ song.songTitle }}
     </li>
   </ul>
