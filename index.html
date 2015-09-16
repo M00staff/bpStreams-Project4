@@ -16,11 +16,11 @@
   <!-- Controller -->
   <script src="js/controllers/showController.js"></script>
   <!-- Directives -->
-  <!-- // <script src="js/directives/getSong.js"></script> -->
+   <script src="js/directives/getSong.js"></script>
   <!-- Service -->
   <!-- // <script src="js/services/service.js"></script> -->
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
@@ -50,7 +50,6 @@
   </footer>
 </div>
 
-<get-song-d></get-song-d>
 
       <!-- <div class="songDizzle">
         <ul>
@@ -60,11 +59,13 @@
           </li>
         </ul>
       </div> -->
+            <!-- <get-song-d></get-song-d> -->
+<get-song-click></get-song-click>
 
-      <div class="showList">
+      <div class="songDizzle" ng-controller="showController">
         <ul>
           <li ng-controller="songController">
-            {{songs}}
+            <li> {{songs.songTitle}} </li>
           </li>
         </ul>
       </div>
@@ -73,9 +74,16 @@
   <ul>
     <li ng-repeat="show in shows" ng-controller="songController" ng-click="go(show.identifier)">
       {{show.title}}
+          <ul>
+            <li ng-repeat="song in songs">
+              {{ song.songTitle }}
+            </li>
+          <ul>
     </li>
   </ul>
 </div>
+
+</get-song-d>
 
   <!-- <div ng-repeat="show in showList.response">
     {{ showList }}
