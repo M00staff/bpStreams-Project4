@@ -18,6 +18,7 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
         //var songs = response.data.files;
         //console.log(songs);
         // var songs = response.data.files;
+          //================================MAYBE PUT THIS INTO A SERVICE inject into another controller and use for footer/playlist
           var songList = [];
         $.each(response.data.files, function getSong(i, val) {           //iterate and add name and title to variables
           var fileName = val.name;
