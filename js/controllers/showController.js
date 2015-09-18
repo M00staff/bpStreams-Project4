@@ -1,9 +1,12 @@
 //dependency injection for AJAX calls
 app.controller('showController', ['$http', '$scope', function($http, $scope) {
   //get request
-  $http.jsonp('https://archive.org/advancedsearch.php?q=BrothersPast&fl%5B%5D=identifier,title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=550&page=1&output=json&callback=JSON_CALLBACK')
+
+  $http.jsonp('https://archive.org/advancedsearch.php?q=BrothersPast&fl%5B%5D=year&fl%5B%5D=date&fl%5B%5D=identifier,title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=50&page=1&output=json&callback=JSON_CALLBACK')
+
   .then(function(data) {
     $scope.shows = data.data.response.docs;
+    console.log(data.data.response.docs);
     });
 } ]);
 
@@ -32,7 +35,7 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
           var ext = fileName.substr(fileName.lastIndexOf('.') + 1);   //check file type - looks at everything after '.'
 
             if ((ext === 'ogg' || ext === 'mp3') && songName != undefined) {
-              songList.push({songTitle: songName, songFile: fileName, deeOne: baseUrl, directory: dir});
+              songList.push({songTitle: songName, songFile: fileName, deeOne: baseUrl, directory: dir, songSource1: 'http://' + baseUrl + dir + '/' + fileName});
               //songList.push({songTitle: songName, songFile: fileName})
               //songList += '<li class="songs-li" data-song-title="' + songName + '" data-song-src="' + fileName + '">' + songName + '</li>';
               //$scope.songs = songList;
