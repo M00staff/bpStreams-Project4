@@ -20,7 +20,7 @@
   <!-- Service -->
   <!-- // <script src="js/services/service.js"></script> -->
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
@@ -51,17 +51,22 @@
         </ul>
       </div> -->
             <!-- <get-song-d></get-song-d> -->
-<div class="wrapper">
 
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="text-center">BP Streams</h1>
-    </div>
-  </div>
 
-  <div class="row" id="topDiv">
-    <get-song-click></get-song-click>
-  </div>
+
+    <!-- <div class="row header"> -->
+      <div class="column column-12">
+        <ul>
+          <li>
+            <img src="http://mnmpresents.com/wp-content/uploads/2010/07/bpLogo.jpg">
+          </li>
+        </ul>
+      </div>
+    <!-- </div> -->
+
+
+  <!-- <div class="row" id="topDiv">
+  </div> -->
 
   <!-- <div class="row">
     <div class="col-md-7">
@@ -76,30 +81,31 @@
     </div>
   </div> -->
 
+<!-- <get-song-click></get-song-click> -->
+
   <!-- <div class="row"> -->
-    <!-- <div class="col-md-7"> -->
-    <div class="showList" ng-controller="showController">
-        <ul>
-          <li ng-repeat="show in shows" ng-controller="songController">
-          <div ng-click="go(show.identifier)">{{show.title}}</div>
-          <ul>
-            <li ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
-              <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory)">{{ song.songTitle }}</div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
 
-    <get-song-d></get-song-d>
+<!-- <div class="row middle"> -->
+    <!-- <div class="column column-2">sadf</div> -->
 
-<!-- <footer>
-    <span class="player-song-title">{{songSource.title}}</span>
-    <audio autoplay controls class="player" ng-src={{songSource.source}}></audio>
-</footer> -->
+        <div class="column column-12" ng-controller="showController">
+            <!-- <ul> -->
+            <div id="allShows" ng-repeat="show in shows | orderBy: 'identifier'" ng-controller="songController">
+                <div ng-click="go(show.identifier)">{{show.title}}</div>
+              <!-- <ul> -->
+                  <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
+                    <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory)">{{ song.songTitle }}</div>
+                  </div>
+              <!-- </ul> -->
+            </div>
+            <!-- </ul> -->
+        </div>
+<!-- </div> -->
 
+  <div class="column column-12">-</div>
+  <get-song-d></get-song-d>
+    <!-- <div class="row footer">-</div> -->
 
-    <!-- </div> -->
   <!-- </div> -->
 
 
@@ -112,6 +118,5 @@
 
 
 
-</div>
 </body>
 </html>
