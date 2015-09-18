@@ -29,6 +29,7 @@ app.directive('getSongD', function() {
     // })
     link: function(scope) {
       console.log("directive ran");
+      
     }
   };
 });
