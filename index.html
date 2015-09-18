@@ -45,7 +45,11 @@
 
         <div class="column column-12" ng-controller="showController">
             <!-- <ul> -->
-            <div id="allShows" ng-repeat="show in shows | orderBy: 'identifier'" ng-controller="songController">
+
+      <input class="search" ng-model="searchText" placeholder="Filter by Year (2001 - 2013)">
+          <!-- <button ng-model="searchText">2012</button> -->
+
+            <div id="allShows" ng-repeat="show in shows | orderBy: 'fileName':reverse | filter: searchText" ng-controller="songController">
                 <div ng-click="go(show.identifier)">{{show.title}}</div>
               <!-- <ul> -->
                   <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
