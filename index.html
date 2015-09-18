@@ -20,7 +20,6 @@
   <!-- Service -->
   <!-- // <script src="js/services/service.js"></script> -->
   <!-- Stylesheets -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
@@ -28,33 +27,6 @@
 
 <body>
 
-
-
-<!-- <div class="wrapper">
-  <main>
-    <div class="container">
-      <div class="nav-wrap">
-        <ul class="vert-nav shows-list"></ul>
-        <ul class="vert-nav show-songs-list"></ul>
-      </div>
-    </div>
-  </main>
-</div> -->
-
-
-      <!-- <div class="songDizzle">
-        <ul>
-          <li ng-controller="songController">
-            {{songs}}
-            songList
-          </li>
-        </ul>
-      </div> -->
-            <!-- <get-song-d></get-song-d> -->
-
-
-
-    <!-- <div class="row header"> -->
       <div class="column column-12">
         <ul>
           <li>
@@ -62,59 +34,27 @@
           </li>
         </ul>
       </div>
-    <!-- </div> -->
 
 
-  <!-- <div class="row" id="topDiv">
-  </div> -->
 
-  <!-- <div class="row">
-    <div class="col-md-7">
-      <div class="songDizzle" ng-controller="showController">
-        <ul>
-          <li ng-controller="songController" ng-repeat="song in songs">
-            {{show.Title}}
-            <li> {{song.songTitle}} </li>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div> -->
-
-<!-- <get-song-click></get-song-click> -->
-
-  <!-- <div class="row"> -->
-
-<!-- <div class="row middle"> -->
-    <!-- <div class="column column-2">sadf</div> -->
 
         <div class="column column-12" ng-controller="showController">
-            <!-- <ul> -->
+
             <div id="allShows" ng-repeat="show in shows | orderBy: 'identifier'" ng-controller="songController">
                 <div ng-click="go(show.identifier)">{{show.title}}</div>
-              <!-- <ul> -->
+
                   <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
                     <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory)">{{ song.songTitle }}</div>
                   </div>
-              <!-- </ul> -->
+
             </div>
-            <!-- </ul> -->
+
         </div>
-<!-- </div> -->
+
 
   <div class="column column-12">-</div>
+
   <get-song-d></get-song-d>
-    <!-- <div class="row footer">-</div> -->
-
-  <!-- </div> -->
-
-
-
-  <!-- <div ng-repeat="show in showList.response">
-    {{ showList }}
-  </div> -->
-<!-- {{ showList | json }} -->
-<!-- <show-directive>{{ shows }}</show-directive> -->
 
 
 
