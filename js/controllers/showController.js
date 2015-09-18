@@ -31,7 +31,7 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
           var ext = fileName.substr(fileName.lastIndexOf('.') + 1);   //check file type - looks at everything after '.'
 
             if ((ext === 'ogg' || ext === 'mp3') && songName != undefined) {
-              songList.push({songTitle: songName, songFile: fileName, deeOne: baseUrl, directory: dir});
+              songList.push({songTitle: songName, songFile: fileName, deeOne: baseUrl, directory: dir, songSource1: 'http://' + baseUrl + dir + '/' + fileName});
               //songList.push({songTitle: songName, songFile: fileName})
               //songList += '<li class="songs-li" data-song-title="' + songName + '" data-song-src="' + fileName + '">' + songName + '</li>';
               //$scope.songs = songList;
