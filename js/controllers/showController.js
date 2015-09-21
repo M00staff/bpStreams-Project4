@@ -1,11 +1,15 @@
+// original call to 'https://archive.org/advancedsearch.php?q=BrothersPast&fl%5B%5D=year&fl%5B%5D=date&fl%5B%5D=identifier,title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=50&page=1&output=json&callback=JSON_CALLBACK'
 //dependency injection for AJAX calls
 app.controller('showController', ['$http', '$scope', function($http, $scope) {
   //get request
-  $http.jsonp('https://archive.org/advancedsearch.php?q=BrothersPast&fl%5B%5D=year&fl%5B%5D=date&fl%5B%5D=identifier,title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=50&page=1&output=json&callback=JSON_CALLBACK')
+  $scope.yearPick = function getSongNow(year) {
+    console.log("2005 button clicked");
+  $http.jsonp('https://archive.org/advancedsearch.php?q=BrothersPast' +year+ '&fl%5B%5D=year&fl%5B%5D=date&fl%5B%5D=identifier,title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=50&page=1&output=json&callback=JSON_CALLBACK')
   .then(function(data) {
     $scope.shows = data.data.response.docs;
     console.log(data.data.response.docs);
     });
+  }
 } ]);
 
 
@@ -38,6 +42,10 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
               //$scope.songs = songList;
               console.log(songList);
               $scope.songs = songList
+              //trying
+              //for (var i = 0; i < songList.length; i++) {
+              init();
+              //}
             }
           })
         })
