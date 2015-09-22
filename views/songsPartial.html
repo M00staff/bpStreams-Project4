@@ -1,10 +1,4 @@
 <footer>
   <span class="player-song-title">{{ songSource.title }}</span>
   <audio autoplay controls class="player" ng-src='{{ songSource.source }}'></audio>
-
-  <ul id="playlist">
-        <li ng-repeat="song in songs | orderBy: 'songFile'">
-          <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory)">{{ song.songTitle }}</div>
-        </li>
-    </ul>
 </footer>
