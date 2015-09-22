@@ -6,7 +6,7 @@ app.controller('showController', ['$http', '$scope', function($http, $scope) {
 
   .then(function(data) {
     $scope.shows = data.data.response.docs;
-    console.log(data.data.response.docs);
+    //console.log(data.data.response.docs);
     });
   }
 } ]);
@@ -16,7 +16,7 @@ app.controller('showController', ['$http', '$scope', function($http, $scope) {
 
 app.controller('songController', ['$http', '$scope', function($http, $scope) {
     $scope.go = function getSongNow(showID) {
-      console.log('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK');
+      //console.log('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK');
       $http.jsonp('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK')
       .then(function(response) {
         //var songs = response.data.files;
@@ -40,8 +40,20 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
               //songList.push({songTitle: songName, songFile: fileName})
               //songList += '<li class="songs-li" data-song-title="' + songName + '" data-song-src="' + fileName + '">' + songName + '</li>';
               //$scope.songs = songList;
-              console.log(songList);
-              $scope.songs = songList
+              //console.log(songList);
+              $scope.songs = songList;
+
+              //================================sorts playlist
+              songList.sort(function (a, b) {
+                if (a.songFile > b.songFile) {
+                  return 1;
+                }
+                if (a.songFile < b.songFile) {
+                  return -1;
+                }
+                return 0;
+              })
+
             }
           })
         })
@@ -50,12 +62,30 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
 
 
 app.controller('getSongCtrl', ['$http', '$scope', function($http, $scope) {
-  $scope.playSong = function(title, file, d1, dir) {
-  //console.log(title, file, d1, dir);
+  $scope.playSong = function(title, file, d1, dir, songList, index) {
   var songSrc = {title: title, source: 'http://' + d1 + dir + '/' + file};
-  console.log(songSrc);
+
+
   $scope.songSource = songSrc;
   $('.player-song-title').html(songSrc.title);          //actual changing of audio source
-  $('.player').attr('src', songSrc.source);
+  $('.player').attr('src', songList[index].songSource1);
+
+
+  //console.log(index);
+  var audio = $('audio');
+  var songCount = index;
+  var len = songList.length - 1;
+  audio[0].addEventListener('ended', function(e){
+      songCount++;
+      if(songCount == len){
+          songCount = 0;
+          $('.player-song-title').html(songList[songCount].songTitle);
+          $('.player').attr('src', songList[songCount].songSource1);
+      } else{
+        $('.player-song-title').html(songList[songCount].songTitle);
+        $('.player').attr('src', songList[songCount].songSource1);
+      }
+    });
+
   }
 }])

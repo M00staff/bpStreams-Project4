@@ -1,19 +1,3 @@
-app.directive('getSongClick', function() {
-  return {
-    restrict: "AE",
-    scope: {
-      songs: "@"
-    },
-    template: "<button ng-click='clickMe()'>Test Songs</button>",
-    link: function($scope) {
-            $scope.clickMe = function() {
-                console.log(songs);
-            }
-    }
-  }
-});
-
-
 app.directive('getSongD', function() {
   return {
     restrict: 'EA',
@@ -28,11 +12,31 @@ app.directive('getSongD', function() {
     //   console.log(newValue);
     // })
     link: function(scope) {
-      console.log("directive ran");
-      
+      //console.log("directive ran");
+
     }
   };
 });
+
+
+
+
+// app.directive('getSongClick', function() {
+//   return {
+//     restrict: "AE",
+//     scope: {
+//       songs: "@"
+//     },
+//     template: "<button ng-click='clickMe()'>Test Songs</button>",
+//     link: function($scope) {
+//             $scope.clickMe = function() {
+//                 console.log(songs);
+//             }
+//     }
+//   }
+// });
+
+
 
 
 
