@@ -1,5 +1,3 @@
-
-
 .row, .column {
   /* By default, box-sizing is set to content-box */
   box-sizing: border-box;
@@ -138,7 +136,17 @@ button:hover {
 .column-11 { width: 91.66%; }
 .column-12 { width: 100%; }
 
+#footNote {
+  font-family: "Arial Black", Gadget, sans-serif;  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 3em;
+}
 
+#footNote a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 footer {
   background: #000;
