@@ -1,3 +1,0 @@
-app.factory('plFactory', function() {
-  
-})
