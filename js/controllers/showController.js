@@ -41,12 +41,39 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
               //songList += '<li class="songs-li" data-song-title="' + songName + '" data-song-src="' + fileName + '">' + songName + '</li>';
               //$scope.songs = songList;
               console.log(songList);
-              $scope.songs = songList
-              //trying
-              //for (var i = 0; i < songList.length; i++) {
-              init();
-              //}
-            }
+              $scope.songs = songList;
+
+
+              //======================================playlist
+
+              songList.sort(function (a, b) {
+                if (a.songFile > b.songFile) {
+                  return 1;
+                }
+                if (a.songFile < b.songFile) {
+                  return -1;
+                }
+                return 0;
+              })
+
+              $('.player-song-title').html(songList[0].songTitle);
+              $('.player').attr('src', songList[0].songSource1);
+              var audio = $('audio');
+              var songCount = 0;
+              var len = songList.length - 1;
+              audio[0].addEventListener('ended',function(e){
+                  songCount++;
+                  if(songCount == len){
+                      songCount = 0;
+                      $('.player-song-title').html(songList[0].songTitle);
+                      $('.player').attr('src', songList[0].songSource1);
+                  } else{
+                    $('.player-song-title').html(songList[songCount].songTitle);
+                    $('.player').attr('src', songList[songCount].songSource1);
+                  }
+              });
+
+            }   //================= OOG if statement closer
           })
         })
     }
@@ -54,12 +81,30 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
 
 
 app.controller('getSongCtrl', ['$http', '$scope', function($http, $scope) {
-  $scope.playSong = function(title, file, d1, dir) {
+  $scope.playSong = function(title, file, d1, dir, songList, index) {
   //console.log(title, file, d1, dir);
   var songSrc = {title: title, source: 'http://' + d1 + dir + '/' + file};
   console.log(songSrc);
+
   $scope.songSource = songSrc;
+  //init();                //==========playlist function
   $('.player-song-title').html(songSrc.title);          //actual changing of audio source
   $('.player').attr('src', songSrc.source);
+
+console.log(index);
+  // var audio = $('audio');
+  // var songCount = index;
+  // var len = songList.length - 1;
+  // audio[index].addEventListener('ended', function(e){
+  //     index++;
+  //     if(index == len){
+  //         index = 0;
+  //         $('.player-song-title').html(songList[0].songTitle);
+  //         $('.player').attr('src', songList[0].songSource1);
+  //     } else{
+  //       $('.player-song-title').html(songList[index].songTitle);
+  //       $('.player').attr('src', songList[index].songSource1);
+  //     }
+  //   });
   }
 }])

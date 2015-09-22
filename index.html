@@ -56,14 +56,15 @@
                 <div ng-click="go(show.identifier)">{{show.title}}</div>
               <!-- <ul> -->
                   <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
-                    <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory)">
+                    <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory, songs, songs.indexOf(song))">
                       {{ song.songTitle }}
-                                  <ul id="playlist">
-                                  <li class="active">
+                                  <!-- <ul id="playlist">
+                                  <li class="active" ng-repeat="song in songs | orderBy: 'songFile'">
                                   <a href={{song.songSource1}}>
                                   {{song.songTitle}}
                                   </a>
                                   </li>
+                                  </ul> -->
                       </div>
                   </div>
               <!-- </ul> -->
@@ -73,7 +74,10 @@
 <!-- </div> -->
 
   <div class="column column-12">-</div>
-  <!-- <get-song-d></get-song-d> -->
+
+  <get-song-d></get-song-d>
+
+
     <!-- <div class="row footer">-</div> -->
   <!-- </div> -->
 
@@ -81,10 +85,10 @@
 
 
 
-  <footer ng-controller="getSongCtrl">
+  <!-- <footer ng-controller="getSongCtrl">
     <span class="player-song-title">{{songSource.title}}</span>
     <audio autoplay controls class="player" ng-src={{songSource.source}}></audio>
-  </footer>
+  </footer> -->
 
 </body>
 </html>

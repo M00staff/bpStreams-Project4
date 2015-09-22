@@ -8,16 +8,23 @@ function init(){
     current = 0;
     audio = $('audio');
     playlist = $('#playlist');
-    tracks = playlist.find('li a');  //stuck here
+    tracks = playlist.find('li a');
     len = tracks.length - 1;
-    audio[0].volume = .10;
+
+    console.log(tracks);
+    console.log('init ran');
+
+    audio[0].volume = .50;
     audio[0].play();
+
     playlist.find('a').click(function(e){
         e.preventDefault();
         link = $(this);
         current = link.parent().index();
         run(link, audio[0]);
     });
+
+
     //i think the below event listener is the important part
     audio[0].addEventListener('ended',function(e){
         current++;
@@ -30,13 +37,17 @@ function init(){
         //trying
         run($(link), audio[0]);
     });
+
+
 }
 function run(link, player){
-        $('player').attr('src', link);
-        //par = link.parent();
-        //par.addClass('active').siblings().removeClass('active');
-        //audio[0].load();
-        //audio[0].play();
+        player.src = link.attr('href');
+        par = link.parent();
+        par.addClass('active').siblings().removeClass('active');
+        audio[0].load();
+        audio[0].play();
+        console.log(audio);
+        $('.player-song-title').text()
 }
 
 // $.ajax({
