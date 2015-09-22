@@ -56,22 +56,22 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
                 return 0;
               })
 
-              $('.player-song-title').html(songList[0].songTitle);
-              $('.player').attr('src', songList[0].songSource1);
-              var audio = $('audio');
-              var songCount = 0;
-              var len = songList.length - 1;
-              audio[0].addEventListener('ended',function(e){
-                  songCount++;
-                  if(songCount == len){
-                      songCount = 0;
-                      $('.player-song-title').html(songList[0].songTitle);
-                      $('.player').attr('src', songList[0].songSource1);
-                  } else{
-                    $('.player-song-title').html(songList[songCount].songTitle);
-                    $('.player').attr('src', songList[songCount].songSource1);
-                  }
-              });
+              // $('.player-song-title').html(songList[0].songTitle);
+              // $('.player').attr('src', songList[0].songSource1);
+              // var audio = $('audio');
+              // var songCount = 0;
+              // var len = songList.length - 1;
+              // audio[0].addEventListener('ended',function(e){
+              //     songCount++;
+              //     if(songCount == len){
+              //         songCount = 0;
+              //         $('.player-song-title').html(songList[0].songTitle);
+              //         $('.player').attr('src', songList[0].songSource1);
+              //     } else{
+              //       $('.player-song-title').html(songList[songCount].songTitle);
+              //       $('.player').attr('src', songList[songCount].songSource1);
+              //     }
+              // });
 
             }   //================= OOG if statement closer
           })
@@ -89,22 +89,25 @@ app.controller('getSongCtrl', ['$http', '$scope', function($http, $scope) {
   $scope.songSource = songSrc;
   //init();                //==========playlist function
   $('.player-song-title').html(songSrc.title);          //actual changing of audio source
-  $('.player').attr('src', songSrc.source);
+  $('.player').attr('src', songList[index].songSource1);
+
 
 console.log(index);
-  // var audio = $('audio');
-  // var songCount = index;
-  // var len = songList.length - 1;
-  // audio[index].addEventListener('ended', function(e){
-  //     index++;
-  //     if(index == len){
-  //         index = 0;
-  //         $('.player-song-title').html(songList[0].songTitle);
-  //         $('.player').attr('src', songList[0].songSource1);
-  //     } else{
-  //       $('.player-song-title').html(songList[index].songTitle);
-  //       $('.player').attr('src', songList[index].songSource1);
-  //     }
-  //   });
+  var audio = $('audio');
+  var songCount = index;
+  var len = songList.length - 1;
+  audio[0].addEventListener('ended', function(e){
+      songCount++;
+      if(songCount == len){
+          songCount = 0;
+          $('.player-song-title').html(songList[songCount].songTitle);
+          $('.player').attr('src', songList[songCount].songSource1);
+      } else{
+        $('.player-song-title').html(songList[songCount].songTitle);
+        $('.player').attr('src', songList[songCount].songSource1);
+      }
+    });
+
+
   }
 }])
