@@ -25,9 +25,6 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
           var songName = val.title;
           var baseUrl = response.data.d1;
           var dir = response.data.dir;
-          //console.log(dir);
-          // console.log(songName);
-          // console.log(fileName);
           var ext = fileName.substr(fileName.lastIndexOf('.') + 1);   //check file type - looks at everything after '.'
 
             if ((ext === 'ogg' || ext === 'mp3') && songName != undefined) {
