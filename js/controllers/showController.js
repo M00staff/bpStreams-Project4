@@ -24,7 +24,6 @@ app.controller('songController', ['$http', '$scope', function($http, $scope) {
           var fileName = val.name;
           var songName = val.title;
           var baseUrl = response.data.d1;
-          //console.log(baseUrl);
           var dir = response.data.dir;
           //console.log(dir);
           // console.log(songName);
