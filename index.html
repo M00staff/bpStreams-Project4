@@ -58,7 +58,7 @@
           <button ng-click="pickYear(2013)">2013</button>
         </div>
 
-            <div id="allShows" ng-repeat="show in shows | orderBy: 'fileName':reverse | filter: searchText" ng-controller="songController">
+            <div id="allShows" ng-repeat="show in shows | orderBy: 'date':reverse | filter: searchText" ng-controller="songController">
 
                 <div ng-click="go(show.identifier)">{{show.title}}</div>
 
