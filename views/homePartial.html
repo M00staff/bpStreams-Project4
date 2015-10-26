@@ -1,0 +1,51 @@
+
+      <div class="column column-12">
+        <ul>
+          <li>
+            <img src="http://mnmpresents.com/wp-content/uploads/2010/07/bpLogo.jpg">
+          </li>
+        </ul>
+      </div>
+
+
+
+
+    <div class="column column-12" ng-controller="showController">
+
+
+        <div class="yearButtons">
+          <p>Select Year</p>
+          <button ng-click="pickYear(2001)">2001</button>
+          <button ng-click="pickYear(2002)">2002</button>
+          <button ng-click="pickYear(2003)">2003</button>
+          <button ng-click="pickYear(2004)">2004</button>
+          <button ng-click="pickYear(2005)">2005</button>
+          <button ng-click="pickYear(2006)">2006</button>
+          <button ng-click="pickYear(2007)">2007</button>
+          <button ng-click="pickYear(2008)">2008</button>
+          <button ng-click="pickYear(2009)">2009</button>
+          <button ng-click="pickYear(2010)">2010</button>
+          <button ng-click="pickYear(2011)">2011</button>
+          <button ng-click="pickYear(2012)">2012</button>
+          <button ng-click="pickYear(2013)">2013</button>
+        </div>
+
+        <div id="allShows" ng-repeat="show in shows | orderBy: 'date':reverse | filter: searchText" ng-controller="songController">
+
+            <div ng-click="go(show.identifier)">{{show.title}}</div>
+
+              <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
+
+                <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory, songs, songs.indexOf(song))">{{ song.songTitle }}</div>
+
+              </div>
+
+        </div>
+
+    </div>
+
+  <div id="footNote" class="column column-12">
+    <a href="mailto:MostafaSHabib@gmail.com">Questions and Site Issues can be sent to MostafaSHabib@gmail.com</a>
+  </div>
+
+  <data-get-song-d></data-get-song-d>
