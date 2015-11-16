@@ -2,23 +2,37 @@ var app = angular.module('bpStreams', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
+
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: '/views/homePartial.html'
+        templateUrl: '/views/homePartial.html',
+        controller: 'showController'
       })
 
-      .state('home.yearDizzle', {
-        url: 'party/:yearId',
-        controller: function($scope, $stateParams) {
-          $scope.id = $stateParams.yearId;
-        },
-        templateUrl: '/views/showsPartial.html'
-      })
+      // .state('home.yearDizzle', {
+      //   url: ':yearId',
+      //   controller: function($http, $scope) {
+      //     //first get request
+      //     $scope.pickYear = function(year) {
+      //     $http.jsonp('https://archive.org/advancedsearch.php?q=BrothersPast,%20year:' +year+ '&fl%5B%5D=year&fl%5B%5D=date&fl%5B%5D=identifier,title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=600&page=1&output=json&callback=JSON_CALLBACK')
+      //
+      //     .then(function(data) {
+      //       $scope.shows = data.data.response.docs;
+      //       $scope.year = year;
+      //       });
+      //     }
+      //   },
+      //   templateUrl: '/views/showsPartial.html'
+      // })
 
       .state('home.year2', {
+        controller: function ($scope) {
+          $scope.pickYear(2002);
+          console.log("anything");
+        },
         url: '2002',
         templateUrl: '/views/showsPartial.html'
       })
