@@ -10,9 +10,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/homePartial.html'
       })
 
-      .state('home.year1', {
-        url: '2001',
-        templateUrl: '/views/showsPartial.html',
+      .state('home.yearDizzle', {
+        url: 'party/:yearId',
+        controller: function($scope, $stateParams) {
+          $scope.id = $stateParams.yearId;
+        },
+        templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year2', {
