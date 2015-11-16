@@ -12,82 +12,117 @@ app.config(function($stateProvider, $urlRouterProvider) {
         controller: 'showController'
       })
 
-      // .state('home.yearDizzle', {
-      //   url: ':yearId',
-      //   controller: function($http, $scope) {
-      //     //first get request
-      //     $scope.pickYear = function(year) {
-      //     $http.jsonp('https://archive.org/advancedsearch.php?q=BrothersPast,%20year:' +year+ '&fl%5B%5D=year&fl%5B%5D=date&fl%5B%5D=identifier,title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=600&page=1&output=json&callback=JSON_CALLBACK')
-      //
-      //     .then(function(data) {
-      //       $scope.shows = data.data.response.docs;
-      //       $scope.year = year;
-      //       });
-      //     }
-      //   },
-      //   templateUrl: '/views/showsPartial.html'
-      // })
+      .state('home.year1', {
+        controller: function ($scope) {
+          $scope.pickYear(2001);
+        },
+        url: '2001',
+        templateUrl: '/views/showsPartial.html'
+      })
 
       .state('home.year2', {
         controller: function ($scope) {
           $scope.pickYear(2002);
-          console.log("anything");
         },
         url: '2002',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year3', {
+        controller: function ($scope) {
+          $scope.pickYear(2003);
+          console.log("anything");
+        },
         url: '2003',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year4', {
+        controller: function ($scope) {
+          $scope.pickYear(2004);
+          console.log("anything");
+        },
         url: '2004',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year5', {
+        controller: function ($scope) {
+          $scope.pickYear(2005);
+          console.log("anything");
+        },
         url: '2005',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year6', {
+        controller: function ($scope) {
+          $scope.pickYear(2006);
+          console.log("anything");
+        },
         url: '2006',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year7', {
+        controller: function ($scope) {
+          $scope.pickYear(2007);
+          console.log("anything");
+        },
         url: '2007',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year8', {
+        controller: function ($scope) {
+          $scope.pickYear(2008);
+          console.log("anything");
+        },
         url: '2008',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year9', {
+        controller: function ($scope) {
+          $scope.pickYear(2009);
+          console.log("anything");
+        },
         url: '2009',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year10', {
+        controller: function ($scope) {
+          $scope.pickYear(2010);
+          console.log("anything");
+        },
         url: '2010',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year11', {
+        controller: function ($scope) {
+          $scope.pickYear(2011);
+          console.log("anything");
+        },
         url: '2011',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year12', {
+        controller: function ($scope) {
+          $scope.pickYear(2012);
+          console.log("anything");
+        },
         url: '2012',
         templateUrl: '/views/showsPartial.html'
       })
 
       .state('home.year13', {
+        controller: function ($scope) {
+          $scope.pickYear(2013);
+          console.log("anything");
+        },
         url: '2013',
         templateUrl: '/views/showsPartial.html'
       })
