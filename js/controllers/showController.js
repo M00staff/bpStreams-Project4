@@ -1,7 +1,10 @@
 //dependency injection for AJAX calls
-app.controller('showController', ['$http', '$scope', function($http, $scope) {
+app.controller('showController', ['$http', '$scope', '$stateParams', '$state', function($http, $scope, $stateParams, $state) {
   //first get request
   $scope.pickYear = function(year, row) {
+
+  $state.go('home.year', {'year2': year});
+
   $http.jsonp('https://archive.org/advancedsearch.php?q=BrothersPast,%20year:' +year+ '&fl%5B%5D=year&fl%5B%5D=date&fl%5B%5D=identifier,title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=' +row+ '&page=1&output=json&callback=JSON_CALLBACK')
 
   .then(function(data) {
@@ -17,9 +20,9 @@ app.controller('showController', ['$http', '$scope', function($http, $scope) {
 app.controller('songController', ['$http', '$scope', '$stateParams', '$state', function($http, $scope, $stateParams, $state) {
     $scope.go = function getSongNow(showID) {
 
-      $stateParams.showId2 = showID;
-      console.log($stateParams.showId2);
-      $state.go('home.year1.show', {'showId2': showID})
+      //$stateParams.showId2 = showID;
+      //console.log(year);
+      //$state.go('home.year1.show', {'showId2': showID});
 
       $http.jsonp('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK')
       .then(function(response) {
