@@ -21,6 +21,7 @@ app.controller('showController', ['$http', '$scope', '$stateParams', '$state', '
 
 
 app.controller('songController', ['$http', '$scope', '$stateParams', '$state', '$rootScope', function($http, $scope, $stateParams, $state, $rootScope) {
+
     $scope.go = function getSongNow(showID) {
 
       //$stateParams.showId2 = showID;
@@ -56,6 +57,9 @@ app.controller('songController', ['$http', '$scope', '$stateParams', '$state', '
         })
       $state.go('home.'+$rootScope.year+'.show', {'showId2': showID});
     }
+
+    //$scope.go('show.identifier');
+
 } ])
 
 
