@@ -44,6 +44,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
+                .state('home.2002.show', {
+                  controller: 'songController',
+                  url: '/:showId2',
+                  templateUrl: '/views/showsPartial.html'
+                })
+
       .state('home.2003', {
         controller: function ($scope) {
           $scope.pickYear(2003, 84);
@@ -52,7 +58,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year4', {
+
+                      .state('home.2003.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2004', {
         controller: function ($scope) {
           $scope.pickYear(2004, 96);
         },
@@ -60,7 +73,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year5', {
+
+                      .state('home.2004.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2005', {
         controller: function ($scope) {
           $scope.pickYear(2005, 131);
         },
@@ -68,7 +88,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year6', {
+
+                      .state('home.2005.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2006', {
         controller: function ($scope) {
           $scope.pickYear(2006, 84);
         },
@@ -76,7 +103,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year7', {
+
+                      .state('home.2006.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2007', {
         controller: function ($scope) {
           $scope.pickYear(2007, 25);
         },
@@ -84,7 +118,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year8', {
+                      .state('home.2007.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2008', {
         controller: function ($scope) {
           $scope.pickYear(2008, 4);
         },
@@ -92,7 +132,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year9', {
+
+                      .state('home.2008.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2009', {
         controller: function ($scope) {
           $scope.pickYear(2009, 17);
         },
@@ -100,7 +147,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year10', {
+
+                      .state('home.2009.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2010', {
         controller: function ($scope) {
           $scope.pickYear(2010, 20);
         },
@@ -108,7 +162,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year11', {
+
+                      .state('home.2010.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2011', {
         controller: function ($scope) {
           $scope.pickYear(2011, 34);
         },
@@ -116,7 +177,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year12', {
+
+                      .state('home.2011.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2012', {
         controller: function ($scope) {
           $scope.pickYear(2012, 14);
         },
@@ -124,12 +192,26 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
-      .state('home.year13', {
+
+                      .state('home.2012.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
+
+      .state('home.2013', {
         controller: function ($scope) {
           $scope.pickYear(2013, 1);
         },
         url: '2013',
         templateUrl: '/views/showsPartial.html'
       })
+
+
+                      .state('home.2013.show', {
+                        controller: 'songController',
+                        url: '/:showId2',
+                        templateUrl: '/views/showsPartial.html'
+                      })
 
 })
