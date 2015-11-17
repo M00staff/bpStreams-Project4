@@ -20,6 +20,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: '/views/showsPartial.html'
       })
 
+                .state('home.year1.show', {
+                  controller: 'songController',
+                  url: '2001/:showId2',
+                  templateUrl: '/views/showsPartial.html'
+                })
+
       .state('home.year2', {
         controller: function ($scope) {
           $scope.pickYear(2002, 26);

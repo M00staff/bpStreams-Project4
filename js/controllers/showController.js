@@ -14,8 +14,13 @@ app.controller('showController', ['$http', '$scope', function($http, $scope) {
 
 
 
-app.controller('songController', ['$http', '$scope', function($http, $scope) {
+app.controller('songController', ['$http', '$scope', '$stateParams', '$state', function($http, $scope, $stateParams, $state) {
     $scope.go = function getSongNow(showID) {
+
+      $stateParams.showId2 = showID;
+      console.log($stateParams.showId2);
+      $state.go('home.year1.show', {'showId2': showID})
+
       $http.jsonp('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK')
       .then(function(response) {
           var songList = [];
