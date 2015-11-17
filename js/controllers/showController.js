@@ -1,15 +1,18 @@
 //dependency injection for AJAX calls
-app.controller('showController', ['$http', '$scope', '$stateParams', '$state', function($http, $scope, $stateParams, $state) {
+app.controller('showController', ['$http', '$scope', '$stateParams', '$state', '$rootScope', function($http, $scope, $stateParams, $state, $rootScope) {
   //first get request
   $scope.pickYear = function(year, row) {
 
-  $state.go('home.year', {'year2': year});
 
   $http.jsonp('https://archive.org/advancedsearch.php?q=BrothersPast,%20year:' +year+ '&fl%5B%5D=year&fl%5B%5D=date&fl%5B%5D=identifier,title&sort%5B%5D=&sort%5B%5D=&sort%5B%5D=&rows=' +row+ '&page=1&output=json&callback=JSON_CALLBACK')
 
   .then(function(data) {
     $scope.shows = data.data.response.docs;
-    $scope.year = year;
+    $rootScope.year = year;
+
+    $stateParams.yearURL = year;
+    // $state.go('home.year', {'yearURL': year});
+
     });
   }
 } ]);
@@ -17,12 +20,11 @@ app.controller('showController', ['$http', '$scope', '$stateParams', '$state', f
 
 
 
-app.controller('songController', ['$http', '$scope', '$stateParams', '$state', function($http, $scope, $stateParams, $state) {
+app.controller('songController', ['$http', '$scope', '$stateParams', '$state', '$rootScope', function($http, $scope, $stateParams, $state, $rootScope) {
     $scope.go = function getSongNow(showID) {
 
       //$stateParams.showId2 = showID;
       //console.log(year);
-      //$state.go('home.year1.show', {'showId2': showID});
 
       $http.jsonp('https://archive.org/metadata/' + showID + '?callback=JSON_CALLBACK')
       .then(function(response) {
@@ -52,6 +54,7 @@ app.controller('songController', ['$http', '$scope', '$stateParams', '$state', f
             }
           })
         })
+      $state.go('home.'+$rootScope.year+'.show', {'showId2': showID});
     }
 } ])
 
