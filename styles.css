@@ -1,5 +1,3 @@
-
-
 .row, .column {
   /* By default, box-sizing is set to content-box */
   box-sizing: border-box;
@@ -19,7 +17,7 @@
   border-radius: 20px;
   text-align: center;
   /*space between columns*/
-  margin: 1%;
+  margin-bottom: 1%;
   position: relative;
 }
 
@@ -88,7 +86,34 @@ ul {
   transition: 0.5s ease-out;
 }
 
-.search {
+.yearButtons {
+  border: solid 2px grey;
+  background-color: aliceblue;
+  margin: 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 1em;
+  transition: 0.5s ease-out;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+
+button {
+  border: solid 2px grey;
+  background-color: aliceblue;
+  /*margin: 1em;*/
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 1em;
+  transition: 0.5s ease-out;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+button:hover {
+  background-color: #CBDAE6;
+}
+
+/*.search {
   font-family: "Courier New", Courier, monospace;
   align-items: center;
   text-align: center;
@@ -96,7 +121,7 @@ ul {
   margin-top: 1em;
   padding: 1em;
   font-size: 1em;
-}
+}*/
 
 .column-1 { width: 8.333%; }
 .column-2 { width: 16.66%; }
@@ -111,8 +136,17 @@ ul {
 .column-11 { width: 91.66%; }
 .column-12 { width: 100%; }
 
+#footNote {
+  font-family: "Arial Black", Gadget, sans-serif;  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 3em;
+}
 
-
+#footNote a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 footer {
   background: #000;

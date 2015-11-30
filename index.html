@@ -20,7 +20,6 @@
   <!-- Service -->
   <!-- // <script src="js/services/service.js"></script> -->
   <!-- Stylesheets -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="styles.css">
 
 </head>
@@ -28,9 +27,6 @@
 
 <body>
 
-
-
-    <!-- <div class="row header"> -->
       <div class="column column-12">
         <ul>
           <li>
@@ -38,42 +34,61 @@
           </li>
         </ul>
       </div>
-    <!-- </div> -->
 
 
 
 
-        <div class="column column-12" ng-controller="showController">
-            <!-- <ul> -->
+    <div class="column column-12" ng-controller="showController">
 
-      <input class="search" ng-model="searchText" placeholder="Filter by Year (2001 - 2013)">
-          <!-- <button ng-model="searchText">2012</button> -->
 
-            <div id="allShows" ng-repeat="show in shows | orderBy: 'fileName':reverse | filter: searchText" ng-controller="songController">
-                <div ng-click="go(show.identifier)">{{show.title}}</div>
-              <!-- <ul> -->
-                  <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
-                    <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory)">{{ song.songTitle }}</div>
-                  </div>
-              <!-- </ul> -->
-            </div>
-            <!-- </ul> -->
+        <div class="yearButtons">
+          <p>Select Year</p>
+          <button ng-click="pickYear(2001, 15)">2001</button>
+          <button ng-click="pickYear(2002, 26)">2002</button>
+          <button ng-click="pickYear(2003, 84)">2003</button>
+          <button ng-click="pickYear(2004, 96)">2004</button>
+          <button ng-click="pickYear(2005, 131)">2005</button>
+          <button ng-click="pickYear(2006, 84)">2006</button>
+          <button ng-click="pickYear(2007, 25)">2007</button>
+          <button ng-click="pickYear(2008, 4)">2008</button>
+          <button ng-click="pickYear(2009, 17)">2009</button>
+          <button ng-click="pickYear(2010, 20)">2010</button>
+          <button ng-click="pickYear(2011, 34)">2011</button>
+          <button ng-click="pickYear(2012, 14)">2012</button>
+          <button ng-click="pickYear(2013, 1)">2013</button>
         </div>
-<!-- </div> -->
 
-  <div class="column column-12">-</div>
-  <get-song-d></get-song-d>
-    <!-- <div class="row footer">-</div> -->
-  <!-- </div> -->
+            <div id="allShows" ng-repeat="show in shows | orderBy: 'date':reverse | filter: searchText" ng-controller="songController">
+
+                <div ng-click="go(show.identifier)">{{show.title}}</div>
+
+                  <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
+
+                    <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory, songs, songs.indexOf(song))">{{ song.songTitle }}</div>
+
+                  </div>
+
+            </div>
+
+    </div>
+
+  <div id="footNote" class="column column-12">
+    <a href="mailto:MostafaSHabib@gmail.com">Questions and Site Issues can be sent to MostafaSHabib@gmail.com</a>
+  </div>
+
+  <data-get-song-d></data-get-song-d>
 
 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+    ga('create', 'UA-69169674-1', 'auto');
+    ga('send', 'pageview');
 
-
-  <!-- <footer ng-controller="getSongCtrl">
-    <span class="player-song-title">{{songSource.title}}</span>
-    <audio autoplay controls class="player" ng-src={{songSource.source}}></audio>
-  </footer> -->
+  </script>
 
 </body>
 </html>
