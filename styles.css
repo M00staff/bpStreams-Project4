@@ -163,3 +163,15 @@ footer .player-song-title,
 footer audio {
   vertical-align: middle;
 }
+
+@media (max-width: 600px) and (orientation: portrait) {
+  footer {
+    height: 20%;
+  }
+}
+
+@media (max-width: 600px) {
+  footer .player-song-title, footer audio {
+    height: 60%;
+  }
+}
