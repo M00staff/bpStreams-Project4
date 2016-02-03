@@ -164,7 +164,9 @@ footer audio {
   vertical-align: middle;
 }
 
-/*Need to perfect exact query*/
+/*
+Note: this media query will NOT work for iPhone6 but should work for most mobile devices
+*/
 @media only screen and (max-device-width: 600px) and (max-device-height: 650px){
 
   footer .player-song-title, footer audio {
@@ -178,20 +180,15 @@ footer audio {
     padding: 3em;
   }
   #allShows {
-    border: solid 2px grey;
-    background-color: aliceblue;
-    display: block;
     margin: 5em;
     padding: 5em;
-    /*border-radius: 20px;*/
-    cursor: pointer;
     padding: 1em;
-    transition: 0.5s ease-out;
     font-family: "Arial Black", Gadget, sans-serif;
   }
   #allSongs {
     padding: 2em;
     border: solid 2px grey;
+    font-family: "Comic Sans MS", cursive, sans-serif;
   }
 
 }
