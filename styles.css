@@ -173,7 +173,7 @@ Note: this media query will NOT work for iPhone6 but should work for most mobile
     height: 60%;
   }
   footer {
-    height: 20%;
+    height: 10%;
   }
   .yearButtons p{
     font-size: 3em;
