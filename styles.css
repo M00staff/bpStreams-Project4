@@ -190,6 +190,7 @@ Note: this media query will NOT work for iPhone6 but should work for most mobile
     padding: 1em;
   }
   #allSongs {
+    font-size: 0.5em;
     padding: 2em;
     border: solid 2px grey;
   }
