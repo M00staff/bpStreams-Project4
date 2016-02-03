@@ -175,20 +175,24 @@ Note: this media query will NOT work for iPhone6 but should work for most mobile
   footer {
     height: 20%;
   }
+  .yearButtons p{
+    font-size: 3em;
+  }
   button {
+    font-size: 2em;
     margin: 0.5em;
-    padding: 3em;
+    padding: 2.5em;
   }
   #allShows {
+    font-size: 2em;
     margin: 5em;
     padding: 5em;
     padding: 1em;
-    font-family: "Arial Black", Gadget, sans-serif;
   }
   #allSongs {
+    font-size: 1.5em;
     padding: 2em;
     border: solid 2px grey;
-    font-family: "Comic Sans MS", cursive, sans-serif;
   }
 
 }
