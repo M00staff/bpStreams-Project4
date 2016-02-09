@@ -185,14 +185,16 @@ Note: this media query will NOT work for iPhone6 but should work for most mobile
   }
   #allShows {
     font-size: 3em;
-    margin: 5em;
-    padding: 5em;
+    margin-left: 3px;
+    margin-top: 2em;
     padding: 1em;
+    width: 89%;
   }
   #allSongs {
     font-size: 0.5em;
     padding: 2em;
     border: solid 2px grey;
+    width: 85%;
   }
 
 }
