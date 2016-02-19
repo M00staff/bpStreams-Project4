@@ -4,8 +4,13 @@ app.controller('showController', ['$scope', 'showFactory', function( $scope, sho
 
   console.log("controller ran");
 
-    $scope.pickYear = showFactory.showYear;
+    // $scope.pickYear = function ( showFactory ) {
+    //   showYear()
+    // }
 
+    $scope.pickYear = showFactory.showYear;
+    // console.log(showFactory.showYear);
+    // $scope.shows = showList;
 
 } ]);
 

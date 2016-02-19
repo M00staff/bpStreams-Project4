@@ -6,6 +6,9 @@ app.factory('showFactory', ['$http', function( $http ) {
 
     .then(function(data) {
       console.log("factory ran");
+      console.log(year);
+      console.log(row);
+      // console.log(data.data.response.docs);
       return data.data.response.docs;
       });
     }
