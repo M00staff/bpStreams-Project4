@@ -164,42 +164,7 @@ footer audio {
   vertical-align: middle;
 }
 
-/*
-Note: this media query will NOT work for iPhone6 but should work for most mobile devices
-*/
-@media only screen and (max-device-width: 600px) and (max-device-height: 650px){
-
-  footer .player-song-title, footer audio {
-    height: 60%;
-  }
-  footer {
-    height: 10%;
-  }
-  .yearButtons p{
-    font-size: 3em;
-  }
-  button {
-    font-size: 2em;
-    margin: 0.5em;
-    padding: 2.5em;
-  }
-  #allShows {
-    font-size: 3em;
-    margin-left: 3px;
-    margin-top: 2em;
-    padding: 1em;
-    width: 89%;
-  }
-  #allSongs {
-    font-size: 0.5em;
-    padding: 2em;
-    border: solid 2px grey;
-    width: 85%;
-  }
-
-}
-
-/*iPhone 6 and 6 plus query*/
+/*Media Query*/
 @media only screen
     and (max-device-width: 640px),
     only screen and (max-device-width: 667px),
