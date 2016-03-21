@@ -164,11 +164,12 @@ footer audio {
   vertical-align: middle;
 }
 
-/*
-Note: this media query will NOT work for iPhone6 but should work for most mobile devices
-*/
-@media only screen and (max-device-width: 600px) and (max-device-height: 650px){
-
+/*Media Query*/
+@media only screen
+    and (max-device-width: 640px),
+    only screen and (max-device-width: 667px),
+    only screen and (max-width: 480px)
+{
   footer .player-song-title, footer audio {
     height: 60%;
   }
