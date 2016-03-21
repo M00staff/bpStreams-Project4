@@ -56,7 +56,7 @@ app.factory('playFactory', ['$http', function( $http ) {
             var songCount = index;
             var len = songList.length - 1;
             audio[0].addEventListener('ended', function(e){
-          songCount++;
+            songCount++;
           if(songCount >= len){
               $('.player-song-title').html(songList[0].songTitle);
               $('.player').attr('src', songList[0].songSource1);
