@@ -1,6 +1,5 @@
-//dependency injection for AJAX calls
-app.controller('showController', ['$scope', 'showFactory', function( $scope, showFactory ) {
 
+app.controller('showController', ['$scope', 'showFactory', function( $scope, showFactory ) {
     $scope.pickYear = function ( year, row ) {
       showFactory.showYear( year, row )
       .then(function(data) {
@@ -9,9 +8,6 @@ app.controller('showController', ['$scope', 'showFactory', function( $scope, sho
     }
 } ]);
 
-
-
-
 app.controller('songController', ['$scope', 'songFactory', function($scope, songFactory) {
     $scope.go = function() {
       songFactory.showPick(this.show.identifier)
@@ -19,13 +15,10 @@ app.controller('songController', ['$scope', 'songFactory', function($scope, song
         $scope.songs = response;
       })
     }
-
-} ])
-
+} ]);
 
 app.controller('getSongCtrl', ['$scope', 'playFactory', function($scope, playFactory) {
   $scope.playSong = function(title, file, d1, dir, songList, index) {
     playFactory.songPick(title, file, d1, dir, songList, index)
-
-}
-} ])
+  }
+} ]);
