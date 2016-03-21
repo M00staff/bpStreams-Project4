@@ -1,17 +1,13 @@
 //dependency injection for AJAX calls
 app.controller('showController', ['$scope', 'showFactory', function( $scope, showFactory ) {
-  //first get request
 
-  console.log("controller ran");
-
-    // $scope.pickYear = function ( showFactory ) {
-    //   showYear()
-    // }
-
-    $scope.pickYear = showFactory.showYear;
-    // console.log(showFactory.showYear);
-    // $scope.shows = showList;
-
+    $scope.pickYear = function ( year, row ) {
+      showFactory.showYear( year, row )
+      .then(function(data) {
+        $scope.shows = data.data.response.docs;
+        console.log(data);
+      });
+    }
 } ]);
 
 
