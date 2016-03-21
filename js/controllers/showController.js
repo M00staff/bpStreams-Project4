@@ -5,7 +5,6 @@ app.controller('showController', ['$scope', 'showFactory', function( $scope, sho
       showFactory.showYear( year, row )
       .then(function(data) {
         $scope.shows = data.data.response.docs;
-        console.log(data);
       });
     }
 } ]);
