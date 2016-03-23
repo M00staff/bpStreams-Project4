@@ -1,1 +1,4 @@
-var app = angular.module('bpStreams', []);
+(function(){
+  angular
+  .module('bpStreams', []);
+}());
