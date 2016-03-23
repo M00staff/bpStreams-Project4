@@ -18,16 +18,16 @@
 </div>
 
 
-    <div id="allShows" ng-repeat="show in shows | orderBy: 'date':reverse | filter: searchText" ng-controller="songController">
+  <div id="allShows" ng-repeat="show in shows | orderBy: 'date':reverse | filter: searchText" ng-controller="songController" ng-click="go()">
 
-        <div ng-click="go()">{{show.title}}</div>
+    {{show.title}}
 
-          <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
+      <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl">
 
-            <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory, songs, songs.indexOf(song))">{{ song.songTitle }}</div>
+        <div ng-click="playSong(song.songTitle, song.songFile, song.deeOne, song.directory, songs, songs.indexOf(song))">{{ song.songTitle }}</div>
 
-          </div>
+      </div>
 
-    </div>
+  </div>
 
 </div>
