@@ -1,7 +1,7 @@
 (function(){
   angular
     .module("bpStreams")
-    .controller('showController', ['$scope', 'showFactory', function( $scope, showFactory ) {
+    .controller('showController', ['showFactory', function( showFactory ) {
       var vm = this;
         this.pickYear = function ( year, row ) {
           showFactory.showYear( year, row )
