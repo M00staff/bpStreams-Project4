@@ -18,7 +18,7 @@
 </div>
 
 
-  <div id="allShows" ng-repeat="show in shows | orderBy: 'date':reverse | filter: searchText" ng-controller="songController as songCtrl" ng-click="songCtrl.go( show.identifier )">
+  <div id="allShows" ng-repeat="show in showCtrl.shows | orderBy: 'date':reverse | filter: searchText" ng-controller="songController as songCtrl" ng-click="songCtrl.go( show.identifier )">
 
     {{show.title}}
 

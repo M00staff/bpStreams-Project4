@@ -2,10 +2,11 @@
   angular
     .module("bpStreams")
     .controller('showController', ['$scope', 'showFactory', function( $scope, showFactory ) {
+      var vm = this;
         this.pickYear = function ( year, row ) {
           showFactory.showYear( year, row )
           .then(function(data) {
-            $scope.shows = data.data.response.docs;
+            vm.shows = data.data.response.docs;
           });
         }
     } ]);
