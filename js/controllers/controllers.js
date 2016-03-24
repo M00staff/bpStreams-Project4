@@ -15,7 +15,7 @@
 (function(){
   angular
     .module("bpStreams")
-    .controller('songController', ['$scope', 'songFactory', function($scope, songFactory) {
+    .controller('songController', ['songFactory', function( songFactory ) {
       var vm = this;
         this.go = function(showID) {
           songFactory.showPick(showID)
