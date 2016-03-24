@@ -1,24 +1,24 @@
-<div class="column column-12" ng-controller="showController as showCtrl">
+<div class="column column-12" ng-controller="showController as shc">
 
 <div class="yearButtons">
   <p>Select Year</p>
-  <button ng-click="showCtrl.pickYear(2001, 15)">2001</button>
-  <button ng-click="showCtrl.pickYear(2002, 26)">2002</button>
-  <button ng-click="showCtrl.pickYear(2003, 84)">2003</button>
-  <button ng-click="showCtrl.pickYear(2004, 96)">2004</button>
-  <button ng-click="showCtrl.pickYear(2005, 131)">2005</button>
-  <button ng-click="showCtrl.pickYear(2006, 84)">2006</button>
-  <button ng-click="showCtrl.pickYear(2007, 25)">2007</button>
-  <button ng-click="showCtrl.pickYear(2008, 4)">2008</button>
-  <button ng-click="showCtrl.pickYear(2009, 17)">2009</button>
-  <button ng-click="showCtrl.pickYear(2010, 20)">2010</button>
-  <button ng-click="showCtrl.pickYear(2011, 34)">2011</button>
-  <button ng-click="showCtrl.pickYear(2012, 14)">2012</button>
-  <button ng-click="showCtrl.pickYear(2013, 1)">2013</button>
+  <button ng-click="shc.pickYear(2001, 15)">2001</button>
+  <button ng-click="shc.pickYear(2002, 26)">2002</button>
+  <button ng-click="shc.pickYear(2003, 84)">2003</button>
+  <button ng-click="shc.pickYear(2004, 96)">2004</button>
+  <button ng-click="shc.pickYear(2005, 131)">2005</button>
+  <button ng-click="shc.pickYear(2006, 84)">2006</button>
+  <button ng-click="shc.pickYear(2007, 25)">2007</button>
+  <button ng-click="shc.pickYear(2008, 4)">2008</button>
+  <button ng-click="shc.pickYear(2009, 17)">2009</button>
+  <button ng-click="shc.pickYear(2010, 20)">2010</button>
+  <button ng-click="shc.pickYear(2011, 34)">2011</button>
+  <button ng-click="shc.pickYear(2012, 14)">2012</button>
+  <button ng-click="shc.pickYear(2013, 1)">2013</button>
 </div>
 
 
-  <div id="allShows" ng-repeat="show in showCtrl.shows | orderBy: 'date':reverse | filter: searchText" ng-controller="songController as songCtrl" ng-click="songCtrl.go( show.identifier )">
+  <div id="allShows" ng-repeat="show in shc.shows | orderBy: 'date':reverse | filter: searchText" ng-controller="songController as sgc" ng-click="sgc.go( show.identifier )">
 
     {{show.title}}
 
