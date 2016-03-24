@@ -22,9 +22,9 @@
 
     {{show.title}}
 
-      <div id="allSongs" ng-repeat="song in songs | orderBy: 'songFile'" ng-controller="getSongCtrl as gsCtrl">
+      <div id="allSongs" ng-repeat="song in sgc.songs | orderBy: 'songFile'" ng-controller="getSongCtrl as gsc">
 
-        <div ng-click="gsCtrl.playSong(song.songTitle, song.songFile, song.deeOne, song.directory, songs, songs.indexOf(song))">{{ song.songTitle }}</div>
+        <div ng-click="gsc.playSong(song.songTitle, song.songFile, song.deeOne, song.directory, sgc.songs, sgc.songs.indexOf(song))">{{ song.songTitle }}</div>
 
       </div>
 

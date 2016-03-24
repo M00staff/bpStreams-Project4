@@ -16,10 +16,11 @@
   angular
     .module("bpStreams")
     .controller('songController', ['$scope', 'songFactory', function($scope, songFactory) {
+      var vm = this;
         this.go = function(showID) {
           songFactory.showPick(showID)
           .then(function(response) {
-            $scope.songs = response;
+            vm.songs = response;
           })
         }
     } ]);
