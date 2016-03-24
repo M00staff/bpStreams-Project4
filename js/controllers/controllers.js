@@ -16,7 +16,6 @@
     .module("bpStreams")
     .controller('songController', ['$scope', 'songFactory', function($scope, songFactory) {
         this.go = function(showID) {
-          console.log(this);
           songFactory.showPick(showID)
           .then(function(response) {
             $scope.songs = response;
