@@ -197,5 +197,11 @@ footer audio {
     border: solid 2px grey;
     width: 85%;
   }
-
+  audio::-webkit-media-controls-play-button {
+    width: 100px;
+    height: 50px;;
+  }
+  .player {
+    width: inherit;
+  }
 }
