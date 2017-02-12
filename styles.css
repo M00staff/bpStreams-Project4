@@ -164,6 +164,12 @@ footer audio {
   vertical-align: middle;
 }
 
+#lyric{
+  margin-bottom: 3em;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+}
+
 /*Media Query*/
 @media only screen
     and (max-device-width: 640px),
